@@ -53,12 +53,15 @@ p.justified{
 }
 
 div.switch{
+	transition: font-size 0.2s;
 	font-size:2em;
 }
 
 div.switch:hover{
 	background-color: #699bd4;
 	cursor: pointer;
+	transition: font-size 0.2s;
+	font-size:3em;
 }
 
 table{

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	console.log(getUrlVars());
 	var pp = Math.round(Math.random() * 100)
 	if(pp%2 ==0){
 		$("img").attr("src","ProfilePic.jpg");
@@ -77,6 +78,18 @@ $(document).ready(function(){
 		$("#strengthToggle").find("span").addClass("glyphicon-chevron-down",1000,"easeOutShine");
 	
 	})
+
+	function getUrlVars(){
+    	var vars = [], hash;
+	    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	    for(var i = 0; i < hashes.length; i++)
+	    {
+	        hash = hashes[i].split('=');
+	        vars.push(hash[0]);
+	        vars[hash[0]] = hash[1];
+	    }
+	    return vars;
+	}
 
 
 
