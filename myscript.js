@@ -1,5 +1,13 @@
 $(document).ready(function(){
-	console.log(getUrlVars());
+	var params = getUrlVars();
+	if(params.length > 1){
+		var review = params["review"];
+		var name = params["name"];
+		var email = params["email"];
+		var fileupload = params["fileupload"]
+
+		alert("Review: " + review + "\nName: " + name + "\nEmail: " + email + "\nFile: " +fileupload);
+	}
 	var pp = Math.round(Math.random() * 100)
 	if(pp%2 ==0){
 		$("img").attr("src","ProfilePic.jpg");
@@ -35,9 +43,17 @@ $(document).ready(function(){
 				$(this).find("span").toggleClass("glyphicon-chevron-down",1000,"easeOutShine");
 				break;
 			}
+			case "mediaToggle": {
+				$("#mediaDetails").slideToggle("slow");
+				$(this).find("span").toggleClass("glyphicon-chevron-right",1000,"easeOutShine");
+				$(this).find("span").toggleClass("glyphicon-chevron-down",1000,"easeOutShine");
+				break;
+			}
 		}
 		
 	})
+	
+
 
 
 
@@ -58,6 +74,11 @@ $(document).ready(function(){
 		$("#strengthToggle").find("span").addClass("glyphicon-chevron-right",1000,"easeOutShine");
 		$("#strengthToggle").find("span").removeClass("glyphicon-chevron-down",1000,"easeOutShine");
 
+
+		$("#mediaDetails").slideUp("slow");
+		$("#mediaToggle").find("span").addClass("glyphicon-chevron-right",1000,"easeOutShine");
+		$("#mediaToggle").find("span").removeClass("glyphicon-chevron-down",1000,"easeOutShine");
+
 	})
 
 	$("#expandAll").click(function(){
@@ -76,6 +97,10 @@ $(document).ready(function(){
 		$("#strengthDetails").slideDown("slow");
 		$("#strengthToggle").find("span").removeClass("glyphicon-chevron-right",1000,"easeOutShine");
 		$("#strengthToggle").find("span").addClass("glyphicon-chevron-down",1000,"easeOutShine");
+		
+		$("#mediaDetails").slideDown("slow");
+		$("#mediaToggle").find("span").removeClass("glyphicon-chevron-right",1000,"easeOutShine");
+		$("#mediaToggle").find("span").addClass("glyphicon-chevron-down",1000,"easeOutShine");
 	
 	})
 
